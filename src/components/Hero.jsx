@@ -1,6 +1,7 @@
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import soniaImage from "../assets/images/sonia.jpg";
+import cvPDF from "../assets/images/cv.pdf";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -15,12 +16,9 @@ const Hero = () => {
     <>
       {/* container */}
       <div className="grid grid-cols-6">
-        {/* empty div */}
-        <div></div>
-
         <div
           className=" col-start-2 col-span-4"
-          style={{ height: "calc(100vh - 64px)" }}
+          style={{ height: "calc(85vh - 64px)" }}
         >
           {/* flex container */}
           <div className="flex flex-col-reverse sm:flex-row justify-evenly mx-auto items-center w-full h-full gap-6 ">
@@ -44,9 +42,25 @@ const Hero = () => {
 
               {/* Buttons */}
               <div className="flex gap-4">
-                <button className="bg-secondary text-sm md:text-lg text-gray-800 px-3 py-2 rounded">
+              <a href={cvPDF} download>
+                <button className="flex items-center bg-secondary text-sm md:text-lg text-gray-800 px-3 py-2 rounded">
                   CV
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
                 </button>
+                </a>
 
                 <button className="text-secondary text-sm md:text-lg bg-primary hover:text-primary hover:bg-secondary px-3 py-2 transition-all duration-300 ease-in-out rounded border-[1px] border-secondary ">
                   <a href="#about">En savoir plus</a>
